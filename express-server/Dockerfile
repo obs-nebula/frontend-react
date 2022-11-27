@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/nodejs-16:latest
+FROM registry.access.redhat.com/ubi8/nodejs-18:latest
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm i
 
 # Copy the dependencies into a Slim Node docker image
-FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:latest
+FROM registry.access.redhat.com/ubi8/nodejs-18-minimal:latest
 
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules

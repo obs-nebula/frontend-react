@@ -3,7 +3,6 @@ services:
   front-end:
     build:
       context: ./front-end
-      dockerfile: dockerFile
     ports:
       - "3000:3000"
     depends_on:
@@ -11,6 +10,5 @@ services:
   express-server:
     build:
       context: ./express-server
-      dockerfile: dockerFile
     ports:
       - "5000:5000"
