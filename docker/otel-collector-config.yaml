@@ -3,19 +3,22 @@ receivers:
     protocols:
       grpc:
       http:
-        endpoint: http://localhost:55678/v1/traces
-        cors_allowed_origins: http://localhost:3000
-
+        endpoint: localhost:4318
+        cors:
+          allowed_origins:
+            - http://*
+            - https://*
 exporters:
-  jaeger:
-    endpoint: "http://localhost:14268/api/traces"
-
+  logging:
+    loglevel: debug
 processors:
   batch:
-
 service:
+  telemetry:
+    logs:
+      level: "debug"
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [jaeger]
+      exporters: [logging]
       processors: [batch]
