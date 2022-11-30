@@ -1,0 +1,41 @@
+version: "2"
+services:
+  front-end:
+    build:
+      context: ../front-end
+    depends_on:
+      - express-server
+      - jaeger
+    ports:
+      - "3000:3000"
+  express-server:
+    build:
+      context: ../express-server
+    ports:
+      - "5000:5000"
+  
+# Collector
+  collector:
+    image: otel/opentelemetry-collector:latest
+    command: ["--config=/conf/otel-collector-config.yaml"]
+    volumes:
+      - './otel-collector-config.yaml:/conf/otel-collector-config.yaml'
+    ports:
+      - "9464:9464"
+      - "55680:55680"
+      - "55681:55681"
+      - "55678:55678"
+    depends_on:
+      - front-end
+      - jaeger
+   
+  jaeger: 
+      image: jaegertracing/all-in-one:latest
+      ports:
+        - "5775:5775/udp"
+        - "6831:6831/udp"
+        - "6832:6832/udp"
+        - "5778:5778"
+        - "16686:16686"
+        - "14268:14268"
+        - "9411:9411"
