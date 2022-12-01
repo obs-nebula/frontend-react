@@ -13,7 +13,7 @@ docker run -v "${PWD}/otel-collector-config.yaml":/otel-local-config.yaml -p 431
 
 fish
 
-```
+```console
 docker run -v "$PWD/otel-collector-config.yaml":/otel-local-config.yaml -p 4318:4318 otel/opentelemetry-collector:latest --config otel-local-config.yaml
 ```
 
