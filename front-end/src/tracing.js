@@ -10,8 +10,9 @@ import { FetchInstrumentation } from '@opentelemetry/instrumentation-fetch';
 
 const consoleExporter = new ConsoleSpanExporter();
 
+// This is using the default localhost:4381
 const collectorExporter = new OTLPTraceExporter({
-  url: 'http://localhost:4318/api/traces'
+  headers: {}
 });
 
 const provider = new WebTracerProvider({

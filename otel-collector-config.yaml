@@ -1,16 +1,14 @@
-receivers:
+receivers: 
   otlp:
     protocols:
       grpc:
       http:
-        endpoint: localhost:4318
         cors:
-          allowed_origins:
-            - http://*
-            - https://*
+          allowed_origins: ["*"]
+          allowed_headers: ["*"]
 exporters:
   logging:
-    loglevel: debug
+    verbosity: Detailed
 processors:
   batch:
 service:
