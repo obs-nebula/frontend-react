@@ -12,13 +12,21 @@ services:
       context: ./express-server
     ports:
       - "5000:5000"
-  # collector:
-  #   image: otel/opentelemetry-collector:latest
-  #   command: ["--config=/conf/otel-collector-config.yaml"]
-  #   volumes:
-  #     - './otel-collector-config.yaml:/conf/otel-collector-config.yaml'
-  #   ports:
-  #     - "9464:9464"
-  #     - "4317:4317"
-  #     - "4318:4318"
-   
+  collector:
+    image: otel/opentelemetry-collector:latest
+    command: ["--config=/otel-collector-config.yaml"]
+    volumes:
+      - './otel-collector-config.yaml:/otel-collector-config.yaml'
+    ports:
+      - "4318:4318"
+    depends_on:
+      - jaeger-all-in-one
+   # Jaeger
+  jaeger-all-in-one:
+    hostname: jaeger-all-in-one
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16685"
+      - "16686:16686"
+      - "14268:14268"
+      - "14250:14250"

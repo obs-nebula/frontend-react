@@ -1,7 +1,6 @@
-receivers: 
+receivers:
   otlp:
     protocols:
-      grpc:
       http:
         cors:
           allowed_origins: ["*"]
@@ -9,6 +8,10 @@ receivers:
 exporters:
   logging:
     verbosity: Detailed
+  jaeger:
+    endpoint: jaeger-all-in-one:14250
+    tls:
+      insecure: true
 processors:
   batch:
 service:
@@ -18,5 +21,5 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [logging]
+      exporters: [logging, jaeger]
       processors: [batch]
