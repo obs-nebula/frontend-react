@@ -3,25 +3,14 @@
 
 ## How to run
 
-Open a terminal and run:
-
-bash
-
-```console
-docker run -v "${PWD}/otel-collector-config.yaml":/otel-local-config.yaml -p 4318:4318 otel/opentelemetry-collector:latest --config otel-local-config.yaml
-```
-
-fish
-
-```console
-docker run -v "$PWD/otel-collector-config.yaml":/otel-local-config.yaml -p 4318:4318 otel/opentelemetry-collector:latest --config otel-local-config.yaml
-```
-
 Open a new terminal and run:
 
 ```console
 docker-compose up --build
 ```
+Check the result in Browser Console:
+
+Check the result in Jaeger UI (http://localhost:16686/)
 
 Check the result in the otelcol logs:
 
