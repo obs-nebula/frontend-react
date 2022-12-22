@@ -7,6 +7,7 @@ function App () {
     const response = await fetch('http://localhost:5000/express_backend');
     const body = await response.json();
 
+    
     if (response.status !== 200) {
       throw Error(body.message)
     }
@@ -16,9 +17,9 @@ function App () {
     <div className='App'>
 
       <h1>This is a simple react project</h1>
-      <button onClick={MyExpressFunction}>Click here please</button>
+      <button id='btn' onClick={MyExpressFunction}>Click here please</button>
 
-      <p>{useValue}</p>
+      <p className='result'>{useValue}</p>
 
 
     </div>
