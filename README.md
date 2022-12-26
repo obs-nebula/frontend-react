@@ -1,5 +1,6 @@
 # frontend-react
 
+[![ci](https://github.com/obs-nebula/frontend-react/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/obs-nebula/frontend-react/actions/workflows/ci.yml)
 
 ## How to run
 
