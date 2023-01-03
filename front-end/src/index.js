@@ -21,9 +21,7 @@ import App from './App';
 import TraceProvider from './tracing';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <>
-    <TraceProvider>
-      <App />
-    </TraceProvider>
-  </>
+  <TraceProvider>
+    <App />
+  </TraceProvider>
 );
