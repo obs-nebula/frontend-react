@@ -32,7 +32,7 @@ const collectorExporter = new OTLPTraceExporter({
 
 const provider = new WebTracerProvider({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'front-end'
+    [SemanticResourceAttributes.SERVICE_NAME]: process.env.REACT_APP_NAME
   })
 });
 
