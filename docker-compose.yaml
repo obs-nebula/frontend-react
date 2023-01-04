@@ -7,6 +7,8 @@ services:
       - express-server
     ports:
       - "3000:3000"
+    env_file:
+     - ./front-end/src/.env
   express-server:
     build:
       context: ./express-server
