@@ -20,7 +20,7 @@ import './App.css';
 function App () {
   const [useValue, useValueFunction] = useState();
   async function MyExpressFunction () {
-    const response = await fetch('http://localhost:5000/express_backend');
+    const response = await fetch('http://express-server-example.apps-crc.testing/express_backend');
     const body = await response.json();
 
     if (response.status !== 200) {
