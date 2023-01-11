@@ -27,7 +27,8 @@ import { FetchInstrumentation } from '@opentelemetry/instrumentation-fetch';
 const consoleExporter = new ConsoleSpanExporter();
 
 const collectorExporter = new OTLPTraceExporter({
-  headers: {}
+  headers: {},
+  url: process.env.REACT_APP_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
 });
 
 const provider = new WebTracerProvider({
