@@ -41,7 +41,7 @@
     "react": "$react"
   },
   "devDependencies": {
-    "jest": "^27.5.1",
+    "jest": "^29.3.1",
     "puppeteer": "18.1.0"
   }
 }
