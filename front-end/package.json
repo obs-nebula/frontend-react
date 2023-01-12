@@ -15,7 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "reactstrap": "^8.5.1"
+    "reactstrap": "^9.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
