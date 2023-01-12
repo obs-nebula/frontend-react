@@ -9,3 +9,6 @@ updates:
     directory: "/front-end" # Location of package manifests
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "puppeteer"
+      - dependency-name: "reactstrap"
