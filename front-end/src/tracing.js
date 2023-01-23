@@ -16,7 +16,7 @@
 
 const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
-const { ConsoleSpanExporter, SimpleSpanProcessor } = require('@opentelemetry/sdk-trace-base');
+const { ConsoleSpanExporter, BatchSpanProcessor } = require('@opentelemetry/sdk-trace-base');
 const { WebTracerProvider } = require('@opentelemetry/sdk-trace-web');
 const { OTLPTraceExporter }  = require('@opentelemetry/exporter-trace-otlp-http');
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
@@ -37,8 +37,18 @@ const provider = new WebTracerProvider({
 const fetchInstrumentation = new FetchInstrumentation({});
 
 fetchInstrumentation.setTracerProvider(provider);
-provider.addSpanProcessor(new SimpleSpanProcessor(consoleExporter));
-provider.addSpanProcessor(new SimpleSpanProcessor(collectorExporter));
+provider.addSpanProcessor(new BatchSpanProcessor(consoleExporter));
+provider.addSpanProcessor(new BatchSpanProcessor(collectorExporter, {
+  // The maximum queue size. After the size is reached spans are dropped.
+  maxQueueSize: 15,
+  // The maximum batch size of every export. It must be smaller or equal to maxQueueSize.
+  maxExportBatchSize: 10,
+  // The interval between two consecutive exports
+  scheduledDelayMillis: 500,
+  // How long the export can run before it is cancelled
+  exportTimeoutMillis: 5000,
+}));
+
 provider.register();
 
 registerInstrumentations({
