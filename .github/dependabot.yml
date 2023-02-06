@@ -6,8 +6,55 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "puppeteer"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
+      - dependency-name: "react-scripts"
       - dependency-name: "reactstrap"
+      - dependency-name: "jest"
   - package-ecosystem: "npm"
     directory: "/express-server"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "express"
+      - dependency-name: "cors"
+  - package-ecosystem: "npm"
+    directory: "/front-end"
+    schedule:
+      interval: "daily"
+    target-branch: "deploy"
+    ignore:
+      - dependency-name: "puppeteer"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
+      - dependency-name: "react-scripts"
+      - dependency-name: "reactstrap"
+      - dependency-name: "jest"
+  - package-ecosystem: "npm"
+    directory: "/express-server"
+    schedule:
+      interval: "daily"
+    target-branch: "deploy"  
+    ignore:
+      - dependency-name: "express"
+      - dependency-name: "cors"
+  - package-ecosystem: "npm"
+    directory: "/front-end"
+    schedule:
+      interval: "daily"
+    target-branch: "batch"
+    ignore:
+      - dependency-name: "puppeteer"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
+      - dependency-name: "react-scripts"
+      - dependency-name: "reactstrap"
+      - dependency-name: "jest"
+  - package-ecosystem: "npm"
+    directory: "/express-server"
+    schedule:
+      interval: "daily"
+    target-branch: "batch"  
+    ignore:
+      - dependency-name: "express"
+      - dependency-name: "cors"      
