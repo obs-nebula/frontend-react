@@ -4,7 +4,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-18:latest
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm i
+RUN npm ci
 
 # Copy the dependencies into a Slim Node docker image
 FROM registry.access.redhat.com/ubi8/nodejs-18-minimal:latest
