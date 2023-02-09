@@ -4,7 +4,7 @@ function InfiniteScroll () {
 	const [dataSource, setdataSource] = useState([]);
 	const [page, setPage] = useState(1);
 	const getRandomData = async () => {
-		let RandomResponse = await fetch(`https://randomuser.me/api`);
+		let RandomResponse = await fetch(`https://randomuser.me/api/?lego`);
 		const RandomData = await RandomResponse.json();
 		const Data = RandomData.results[0];
 		setdataSource((prev) => [...prev, Data]);
