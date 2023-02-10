@@ -16,7 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false"
+    "test": "react-scripts test --watchAll=false",
+    "prestart": "eslint --fix  ."
   },
   "browserslist": {
     "production": [
@@ -37,6 +38,8 @@
     "react": "$react"
   },
   "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-plugin-react": "^7.32.2",
     "jest": "^29.3.1",
     "puppeteer": "18.1.0"
   }
