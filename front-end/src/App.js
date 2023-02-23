@@ -41,7 +41,7 @@ function App () {
           An employee information form ensures that you have current details on employees, including contact details and emergency contact information.
           Collecting and updating these forms periodically will allow you to keep track of your employees and reference details when you need them. Learn what to include on an employee information form and how to create one for your business.
         </p>
-        <button id='btn' style={{ padding: '0.5% 3%', backgroundColor: 'indianred' }} onClick={() => {
+        <button id='btn' style={{ padding: '0.5% 3%', backgroundColor: '#E0E0E0' }} onClick={() => {
           setToggle(!toggle);
           MyExpressFunction();
         }}>Learn more </button>
