@@ -2,6 +2,15 @@
 
 [![ci](https://github.com/obs-nebula/frontend-react/actions/workflows/ci.yml/badge.svg)](https://github.com/obs-nebula/frontend-react/actions/workflows/ci.yml)
 
+| Package | Why |
+| ----------- | ----------- |
+| @opentelemetry/exporter-trace-otlp-http | To export to OTEL collector via OTLP/HTTP |
+| @opentelemetry/resources | To be used with `semantic-conventions` to identify the application/service's name |
+| @opentelemetry/sdk-trace-web | For automatic instrumentation |
+| @opentelemetry/semantic-conventions | To be used with `resources` to identify the application/service's name |
+| @opentelemetry/instrumentation | To register the fetch auto-instrumentation plugin |
+| @opentelemetry/instrumentation-fetch | For fetch auto-instrumentation |
+
 ## How to run
 
 Open a new terminal and run:
