@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/front-end"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     ignore:
       - dependency-name: "puppeteer"
       - dependency-name: "react"
@@ -15,7 +15,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/express-server"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     ignore:
       - dependency-name: "express"
       - dependency-name: "cors"
@@ -23,7 +23,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/front-end"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     target-branch: "deploy"
     ignore:
       - dependency-name: "puppeteer"
@@ -36,7 +36,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/express-server"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     target-branch: "deploy"  
     ignore:
       - dependency-name: "express"
@@ -45,7 +45,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/front-end"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     target-branch: "batch"
     ignore:
       - dependency-name: "puppeteer"
@@ -58,7 +58,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/express-server"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     target-branch: "batch"  
     ignore:
       - dependency-name: "express"
