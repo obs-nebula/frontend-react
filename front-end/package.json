@@ -2,7 +2,7 @@
   "name": "front-end",
   "version": "0.1.0",
   "dependencies": {
-    "@opentelemetry/exporter-trace-otlp-http": "^0.37.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.38.0",
     "@opentelemetry/instrumentation": "^0.38.0",
     "@opentelemetry/instrumentation-fetch": "^0.37.0",
     "@opentelemetry/resources": "^1.12.0",
