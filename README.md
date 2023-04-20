@@ -1,8 +1,6 @@
 # frontend-react
 
-[![ci](https://github.com/obs-nebula/frontend-react/actions/workflows/ci.yml/badge.svg)](https://github.com/obs-nebula/frontend-react/actions/workflows/ci.yml)
-
-| Package | Why |
+| Package | |
 | ----------- | ----------- |
 | @opentelemetry/exporter-trace-otlp-http | To export to OTEL collector via OTLP/HTTP |
 | @opentelemetry/resources | To be used with `semantic-conventions` to identify the application/service's name |
